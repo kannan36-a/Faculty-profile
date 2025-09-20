@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Department of AIML & DS</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0b0d2a;
+      color: white;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      padding: 15px 30px;
+    }
+    header img {
+      height: 60px;
+    }
+    nav a {
+      margin: 0 15px;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .search-btn {
+      padding: 5px 15px;
+      background-color: #004aad;
+      border: none;
+      color: white;
+      border-radius: 5px;
+    }
+    .welcome-section {
+      background: linear-gradient(to right, #f1f1f1, #fff);
+      color: #001B44;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px 60px;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .welcome-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+    .welcome-section p {
+      font-size: 1.1rem;
+      color: #333;
+      margin-top: 10px;
+      max-width: 500px;
+    }
+  .welcome-section img {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+    @media (max-width: 900px) {
+      .welcome-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 30px;
+      }
+      .welcome-section img {
+        margin-top: 30px;
+      }
+    }
+    .about-section {
+      background-color: #0b0d2a;
+      padding: 40px;
+      text-align: center;
+    }
+    .about-section h2 {
+      background-color: #d9d9d9;
+      color: #111;
+      padding: 10px 20px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+    .about-section p {
+      color: #ddd;
+      text-align: justify;
+      margin-top: 20px;
+    }
+    .about-buttons {
+      margin-top: 20px;
+    }
+    .about-buttons button {
+      background-color: #007bff;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .vision-mission {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px;
+      flex-wrap: wrap;
+    }
+    .card {
+      background-color: #d9d9d9;
+      border-radius: 20px;
+      color: black;
+      padding: 20px;
+      width: 300px;
+      margin: 10px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+    .card img {
+      width: 200px;
+      height: 100px;
+      margin-bottom: 15px;
+    }
+    .card h3 {
+      margin-bottom: 10px;
+      color: #004aad;
+    }
+    .card p, .card ul {
+      text-align: left;
+      color: #333;
+    }
+    .card ul {
+      padding-left: 20px;
+    }
+    .footer {
+      background-color: #012147;
+      color: white;
+      padding: 40px 20px 20px;
+    }
+    .footer-top {
+      text-align: center;
+      padding-bottom: 10px;
+    }
+    .footer-top img {
+      width: 35px;
+      height: 35px;
+      margin: 0 5px;
+      border-radius: 50%;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding-top: 20px;
+      gap: 40px;
+    }
+    .footer-left,
+    .footer-mid {
+      flex: 1;
+      min-width: 280px;
+    }
+    .footer-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      flex: 1;
+      min-width: 280px;
+    }
+    .footer-right a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      border: 1px solid #ffffff50;
+      border-radius: 20px;
+      text-align: center;
+    }
+    .footer-bottom {
+      text-align: center;
+      font-size: 12px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.jpg" alt="Christ University Logo">
+    <nav>
+      <a href="https://christuniversity.in" target="_blank">Home</a>
+      <a href="#">Departments</a>
+      <a href="#">Contact</a>
+      <button class="search-btn">Search</button>
+    </nav>
+  </header>
+
+  <div class="welcome-section">
+    <div>
+      <h2>Welcome to the<br>Department of AIML and Data Science</h2>
+      <p>Empowering the future with AI, ML and Data Science</p>
+    </div>
+    <img src="Campusimage.jpg" alt="Campus Image">
+  </div>
+
+  <div class="about-section">
+    <h2>About Us</h2>
+    <p>
+      The Department offers three programmes BTech in AIML, BTech CSE Specialization in Data Science, BTech in CSE Specialization in AIML and MTech in Data Science. It focuses on equipping students with strong theoretical foundations and practical skills in areas such as Artificial Intelligence, Machine Learning, deep learning, natural language processing, computer vision, data analytics, and intelligent systems. The curriculum is designed to meet industry demands and foster innovation, creativity, and critical thinking. With experienced faculty, modern laboratories, and industry collaborations, the department offers a rich learning environment for research and development. Students are encouraged to participate in internships, real-time projects and hackathons to gain hands-on experience. The department also promotes ethical AI practices through societal impact awareness. Graduates are well-prepared for careers in data science, AI research, software development, and analytics across various sectors, including healthcare, finance, education, robotics, and technologies under the SamhIT of AI, ML and Data Science, making them valuable contributors to the digital transformation of society. The department conducts workshops and industry hands-on sessions on regular basis to equip students to learn and implement latest technologies in AI and data science.
+    </p>
+    <div class="about-buttons">
+      <button onclick="window.location.href='https://christuniversity.in'">Home</button>
+      <button onclick="window.location.href='ourfaculty.html'">Meet our Faculty</button>
+    </div>
+  </div>
+
+  <div class="vision-mission">
+    <div class="card">
+      <img src="vision.jpg" alt="Vision Icon">
+      <h3>Our Vision</h3>
+      <p>To excel in human-centered AI and data-driven innovation through ethical research, societal well-being, and transformative collaborations.</p>
+    </div>
+    <div class="card">
+      <img src="mission.jpg" alt="Mission Icon">
+      <h3>Our Mission</h3>
+      <ul>
+        <li>Empowering individuals to ethically harness data and AI through accessible and value-driven curriculum.</li>
+        <li>Foster a dynamic research environment that advances innovation and impactful solutions for global well-being.</li>
+        <li>Innovate scientific knowledge and entrepreneurship through academia and industry collaborations.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <img src="core.jpg" alt="Core Values Icon">
+      <h3>Core Values</h3>
+      <ul>
+        <li>Faith in God</li>
+        <li>Moral Uprightness</li>
+        <li>Love of Fellow Beings</li>
+        <li>Social Responsibility</li>
+        <li>Pursuit of Excellence</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-top">
+      <img src="https://img.icons8.com/color/48/000000/facebook.png" alt="Facebook">
+      <img src="https://img.icons8.com/color/48/000000/x.png" alt="X">
+      <img src="https://img.icons8.com/color/48/000000/blogger.png" alt="Blogger">
+      <img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube">
+      <img src="https://img.icons8.com/color/48/000000/google-play.png" alt="Play Store">
+      <img src="https://img.icons8.com/color/48/000000/flickr.png" alt="Flickr">
+      <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram">
+      <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn">
+    </div>
+
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>CHRIST</h3>
+        <p>(Deemed to be University)<br>
+        Dharmaram College Post, Hosur Road,<br>
+        Bengaluru - 560029, Karnataka, India<br>
+        📞 Tel: +91 804012 9100 / 9600<br>
+        📠 Fax: 40129000<br>
+        ✉️ Email: mail@christuniversity.in<br>
+        🌐 Web: http://www.christuniversity.in</p>
+      </div>
+      <div class="footer-mid">
+        <strong>Vision</strong><br>EXCELLENCE AND SERVICE<br><br>
+        <strong>Mission</strong><br>
+        CHRIST (Deemed to be University) is a nurturing ground for an individual's holistic development to make effective contribution to the society in a dynamic environment.
+      </div>
+      <div class="footer-right">
+        <a href="#">UBA</a>
+        <a href="#">FCRA</a>
+        <a href="#">Alumni</a>
+        <a href="#">IQAC</a>
+        <a href="#">Careers</a>
+        <a href="#">Library</a>
+        <a href="#">Centres</a>
+        <a href="#" style="color: #ccc;">Research</a>
+        <a href="#">Admission</a>
+        <a href="#">Course Index</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      Copyright © CHRIST (Deemed to be University) 2020 | Privacy Policy<br>
+      Website Developed by Cloud Business Pages from INI Technologies Pvt Ltd., Kochi, India
+    </div>
+  </div>
+
+</body>
+</html>

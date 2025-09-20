@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Faculty - CHRIST (Deemed to be University)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #0c2e54;
+            padding: 10px 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            height: 80px;
+        }
+
+        header nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #76c0ff;
+            text-decoration: underline;
+        }
+
+        header nav a:active {
+            color: #a6d8ff;
+        }
+
+        .section-title {
+            background-color: #0c2e54;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        .search-box {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .search-box input {
+            padding: 8px;
+            width: 220px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-box button {
+            padding: 8px 14px;
+            background-color: #0c2e54;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-box button:hover {
+            background-color: #145aa2;
+        }
+
+        .faculty-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .faculty-member {
+            flex: 0 0 calc(33.333% - 40px);
+            max-width: calc(33.333% - 40px);
+            text-align: center;
+            margin: 0;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer; /* Indicate that the entire member div is clickable */
+        }
+
+        /* Style the anchor tag within faculty-member to fill the space */
+        .faculty-member a {
+            text-decoration: none; /* Remove underline from the link */
+            color: inherit; /* Inherit text color from parent */
+            display: block; /* Make the anchor fill the entire div */
+            /* No padding/margin here, let the parent .faculty-member handle it */
+        }
+
+        @media (max-width: 900px) {
+            .faculty-member {
+                flex: 0 0 calc(50% - 30px);
+                max-width: calc(50% - 30px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .faculty-member {
+                flex: 0 0 calc(100% - 20px);
+                max-width: calc(100% - 20px);
+            }
+        }
+
+        .faculty-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .faculty-member img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border-radius: 50%;
+            outline: 1px solid #f9f9f9;
+            outline-offset: -1px;
+            background-color: #f9f9f9;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .faculty-member p {
+            font-weight: bold;
+            font-size: 14px;
+            margin: 0;
+            color: #0c2e54;
+        }
+
+        /* Footer Styles */
+        .site-footer {
+            background-color: #001d3d;
+            color: white;
+            font-size: 14px;
+            padding: 0;
+        }
+
+        .footer-top-row {
+            background-color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .social-icons {
+            margin-bottom: 0;
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons img {
+            width: 32px;
+            height: 32px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px 30px 20px;
+            gap: 40px;
+            justify-content: space-between;
+        }
+
+        .footer-left,
+        .footer-middle,
+        .footer-right {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-left a {
+            color: #8bbdff;
+            text-decoration: underline;
+        }
+
+        .footer-buttons-grid {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-column button {
+            background-color: transparent;
+            border: 1px solid #fff;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            text-align: center;
+            cursor: pointer;
+            width: 160px;
+            transition: background-color 0.3s;
+        }
+
+        .footer-column button:hover {
+            background-color: #003366;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 12px;
+            padding: 15px;
+            color: #ccc;
+            border-top: 1px solid #002a5c;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <img src="logo.jpg" alt="CHRIST University Logo">
+    <nav>
+        <a href="dont.html">Home</a> <a href="#">Departments</a>
+        <a href="#">Contact</a>
+        <a href="#">Search</a>
+    </nav>
+</header>
+
+<div class="section-title">Our Faculty</div>
+
+<div class="search-box">
+    <input type="text" placeholder="Search faculty...">
+    <button>Search</button>
+</div>
+
+<div class="faculty-container">
+    <div class="faculty-member">
+        <a href="MelbinReena.html">
+            <img src="https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E5871.jpg" alt="Dr MELBIN J REENA">
+            <p>Dr MELBIN J REENA</p>
+        </a>
+    </div>
+    <div class="faculty-member">
+        <a href="alpha vijayan.html">
+            <img src="https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E8586.jpg" alt="Dr ALPHA VIJAYAN">
+            <p>Dr ALPHA VIJAYAN</p>
+        </a>
+    </div>
+    <div class="faculty-member">
+        <a href="Gnana prakasi.html">
+            <img src="https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E2920.jpg" alt="Dr GNANA PRAKASI O S">
+            <p>Dr GNANA PRAKASI O S</p>
+        </a>
+    </div>
+    <div class="faculty-member">
+        <a href="dr_jeno_lovesum_s_p.html">
+            <img src="https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E5872.jpg" alt="Dr JENO LOVESUM S P">
+            <p>Dr JENO LOVESUM S P</p>
+        </a>
+    </div>
+    <div class="faculty-member">
+        <a href="dr_manikandakumar_m.html">
+            <img src="https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E7466.jpg" alt="Dr MANIKANDAKUMAR M">
+            <p>Dr MANIKANDAKUMAR M</p>
+        </a>
+    </div>
+    <div class="faculty-member">
+        <a href="dr_vigneshwaran_t.html">
+            <img src="https://kp.christuniversity.in/KnowledgePro/images/EmployeePhotos/E6788.jpg" alt="Dr VIGNESHWARAN T">
+            <p>Dr VIGNESHWARAN T</p>
+        </a>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-top-row">
+        <div class="social-icons">
+            <a href="#"><img src="https://img.icons8.com/color/48/facebook.png" alt="Facebook" /></a>
+            <a href="#"><img src="https://img.icons8.com/color/48/google-play.png" alt="Google Play" /></a>
+            <a href="#"><img src="https://img.icons8.com/color/48/twitter--v1.png" alt="Twitter" /></a>
+            <a href="#"><img src="https://img.icons8.com/color/48/blogger.png" alt="Blogger" /></a>
+            <a href="#"><img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram" /></a>
+            <a href="#"><img src="https://img.icons8.com/color/48/linkedin.png" alt="LinkedIn" /></a>
+        </div>
+    </div>
+
+    <div class="footer-container">
+        <div class="footer-left">
+            <h3>CHRIST</h3>
+            <p>(Deemed to be University)</p>
+            <p>📍 Dharmaram College Post, Hosur Road,<br>Bengaluru – 560029, Karnataka, India</p>
+            <p>📞 Tel: +91 8040129100 / 9600</p>
+            <p>📠 Fax: 40129000</p>
+            <p>📧 Email: mail@christuniversity.in</p>
+            <p>🔗 Web: <a href="http://www.christuniversity.in" target="_blank">www.christuniversity.in</a></p>
+        </div>
+
+        <div class="footer-middle">
+            <h4>Vision</h4>
+            <p>EXCELLENCE AND SERVICE</p>
+            <h4>Mission</h4>
+            <p>CHRIST (Deemed to be University) is a nurturing ground for an individual’s holistic development to make effective contribution to the society in a dynamic environment.</p>
+        </div>
+        <div class="footer-right">
+            <div class="footer-buttons-grid">
+                <div class="footer-column">
+                    <button>UBA</button>
+                    <button>FCRA</button>
+                    <button>Alumni</button>
+                    <button>IQAC</button>
+                    <button>Careers</button>
+                </div>
+                <div class="footer-column">
+                    <button>Library</button>
+                    <button>Centres</button>
+                    <button>Research</button>
+                    <button>Admission</button>
+                    <button>Course Index</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>Copyright © CHRIST (Deemed to be University) 2020 |
+            <a href="#">Privacy Policy</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

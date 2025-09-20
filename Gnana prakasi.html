@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Faculty Profile - Dr. Gnana Prakasi O S</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 10px 30px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      height: 90px;
+    }
+
+    .top-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .top-links a {
+      text-decoration: none;
+      color: #002f6c;
+      font-weight: bold;
+    }
+
+    .search-btn {
+      background-color: #002f6c;
+      color: white;
+      padding: 6px 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .title {
+      text-align: center;
+      background-color: #05294d;
+      color: white;
+      padding: 30px;
+      margin: 0;
+      font-size: 34px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .profile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 60px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .profile-left-section {
+      flex: 1 1 35%;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid #ddd;
+      margin-bottom: 15px;
+    }
+
+    .profile-name {
+      color: #002f6c;
+      margin: 0 0 10px 0;
+      font-size: 28px;
+    }
+
+    .profile-designation {
+      font-weight: bold;
+      margin: 0 0 5px 0;
+      color: #555;
+    }
+
+    .profile-department {
+      margin: 0 0 15px 0;
+      color: #555;
+    }
+
+    .contact-info {
+      margin: 15px 0;
+    }
+
+    .contact-info p {
+      margin: 5px 0;
+    }
+
+    .profile-right-section {
+      flex: 1 1 60%;
+      min-width: 450px;
+      background-color: #002f6c;
+      padding: 25px;
+      border-radius: 8px;
+      color: white;
+      line-height: 1.6;
+      min-height: 300px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .social-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .social-buttons a button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      background-color: #4375b6;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .social-buttons a button:hover {
+      background-color: #35629c;
+    }
+
+    .section {
+      margin-bottom: 30px;
+      background-color: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .section-title {
+      color: #002f6c;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 8px;
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .button-group button {
+      background: linear-gradient(135deg, #0052d4, #4364f7, #6fb1fc);
+      color: white;
+      padding: 12px 22px;
+      border: none;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.35s ease;
+      box-shadow: 0 4px 10px rgba(0, 82, 212, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .button-group button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.25);
+      transition: all 0.4s ease;
+    }
+
+    .button-group button:hover::before {
+      left: 100%;
+    }
+
+    .button-group button:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 18px rgba(0, 82, 212, 0.4);
+    }
+
+    .button-group button:active {
+      transform: scale(0.97);
+      box-shadow: 0 3px 8px rgba(0, 82, 212, 0.4);
+    }
+
+    #data-container {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
+
+    /* Footer styles */
+    .site-footer {
+      background-color: #001d3d;
+      color: white;
+      font-size: 14px;
+      padding: 0;
+    }
+
+    .footer-top-row {
+      background-color: rgb(255, 255, 255);
+      padding: 20px 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 0;
+    }
+
+    .social-icons a img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .back-button button {
+      background-color: #002f6c;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px 30px 20px;
+      gap: 40px;
+    }
+
+    .footer-left,
+    .footer-middle,
+    .footer-right {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-left a {
+      color: #8bbdff;
+      text-decoration: underline;
+    }
+
+    .footer-buttons-grid {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-column button {
+      background-color: transparent;
+      border: 1px solid #fff;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      text-align: center;
+      cursor: pointer;
+      width: 160px;
+      transition: background-color 0.3s;
+    }
+
+    .footer-column button:hover {
+      background-color: #003366;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 12px;
+      padding: 15px;
+      color: #ccc;
+      border-top: 1px solid #003366;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .profile-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .profile-left-section,
+      .profile-right-section {
+        min-width: unset;
+        width: 100%;
+        text-align: center;
+      }
+
+      .profile-left-section .profile-image {
+        margin: 0 auto 15px auto;
+      }
+
+      .profile-left-section .contact-info,
+      .profile-left-section .social-buttons {
+        align-self: center;
+      }
+
+      .profile-right-section {
+        padding: 20px 15px;
+        min-height: unset;
+      }
+
+      .footer-top-row {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .footer-buttons-grid {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .footer-column {
+        width: 100%;
+      }
+
+      .footer-column button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <img src="logo.jpg" alt="Christ Logo" class="logo">
+      <div class="top-links">
+        <a href="#">Home</a>
+        <a href="#">Departments</a>
+        <a href="#">Contact</a>
+        <button class="search-btn">Search</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="title">Faculty Profile</h1>
+
+    <div class="container">
+      <div class="profile-header">
+        <div class="profile-left-section">
+          <img src="gnanaimage.jpg" alt="Dr. Gnana Prakasi O S" class="profile-image">
+
+          <h2 class="profile-name">Dr. Gnana Prakasi O S</h2>
+          <p class="profile-designation">Associate Professor</p>
+          <p class="profile-department">Department of Computer Science</p>
+
+          <div class="contact-info">
+            <p><strong>Email (Official):</strong> gnana.prakasi@christuniversity.in</p>
+            <p><strong>Email (Personal):</strong> —</p>
+            <p><strong>Phone:</strong> —</p>
+            <p><strong>Office Location:</strong> Department of Computer Science, School of Sciences, Christ University, Bengaluru, Karnataka</p>
+          </div>
+
+          <div class="social-buttons">
+            <a href="#" target="_blank"><button>🔗 LinkedIn</button></a>
+            <a href="#" target="_blank"><button>📄 Scopus</button></a>
+            <a href="#" target="_blank"><button>📊 WOS</button></a>
+            <a href="#" target="_blank"><button>🆔 Orcid Id</button></a>
+          </div>
+        </div>
+
+        <div class="profile-right-section">
+          <p>
+            Dr. Gnana Prakasi O S is a highly accomplished and dedicated **Associate Professor** in the Department of AIML & Data Science at **CHRIST (Deemed to be University), Bengaluru**. 
+            Her extensive academic journey includes a **Ph.D. from Madras Institute of Technology Campus, Anna University (2017)**, 
+            and an **M.E. in Software Engineering with University First rank** from Periyar Maniammai College of Technology for Women (2008). 
+            She also holds a B.Tech in IT from St. Xaviers Catholic College of Engineering (2005). 
+          </p>
+          <p>
+            With a rich professional background spanning over a decade, Dr. Gnana Prakasi has held academic positions at various esteemed institutions, including **Teaching Fellow at Madras Institute of Technology** 
+            and Lecturer at St. Xavier's Catholic College of Engineering. 
+            She joined CHRIST (Deemed to be University) as an Assistant Professor in 2018 and was promoted to Associate Professor in September 2023.
+          </p>
+          <p>
+            Her key research interests lie in cutting-edge domains such as Wireless Networks, Cyber Security, Quantum Algorithms, and Machine Learning.
+            She is a prolific researcher with a significant contribution to the scientific community, evidenced by multiple national patents(including "Sequential Phishing Detection System," "Mathematical Model for Pre-Clinical Prediction Of Dementia," 
+            and "IoT Based Intelligent Traffic Management System") and numerous Scopus-indexed journal publications and book chapters. 
+            Dr. Gnana Prakasi's work consistently focuses on innovative solutions in AI and data science to address complex real-world problems.
+          </p>
+        </div>
+      </div>
+
+      <!-- Dynamic Section with Buttons -->
+      <div class="section">
+        <h3 class="section-title">Details</h3>
+        <div class="button-group">
+          <button onclick="fetchData('qualifications')">Academic Qualifications</button>
+          <button onclick="fetchData('experience')">Professional Experience</button>
+          <button onclick="fetchData('research')">Research Interests</button>
+          <button onclick="fetchData('publications')">Publications</button>
+        </div>
+        <div id="data-container"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top-row">
+      <div class="social-icons">
+          <a href="#" target="_blank"><img src="https://img.icons8.com/color/48/facebook.png" alt="Facebook" /></a>
+          <a href="#" target="_blank"><img src="https://img.icons8.com/color/48/google-scholar.png" alt="Google Scholar" /></a>
+          <a href="#" target="_blank"><img src="https://img.icons8.com/color/48/twitter--v1.png" alt="Twitter" /></a>
+          <a href="#" target="_blank"><img src="https://img.icons8.com/color/48/blogger.png" alt="Blogger" /></a>
+          <a href="#" target="_blank"><img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram" /></a>
+          <a href="#" target="_blank"><img src="https://img.icons8.com/color/48/linkedin.png" alt="LinkedIn" /></a>
+      </div>
+
+      <div class="back-button">
+        <button onclick="window.history.back()">Back to faculty →</button>
+      </div>
+    </div>
+
+    <div class="footer-container">
+      <div class="footer-left">
+        <h3>CHRIST</h3>
+        <p>(Deemed to be University)</p>
+        <p>📍 Dharmaram College Post, Hosur Road,<br>Bengaluru – 560029, Karnataka, India</p>
+        <p>📞 Tel: +91 8040129100 / 9600</p>
+        <p>📠 Fax: 40129000</p>
+        <p>📧 Email: mail@christuniversity.in</p>
+        <p>🔗 Web: <a href="http://www.christuniversity.in" target="_blank">www.christuniversity.in</a></p>
+      </div>
+
+      <div class="footer-middle">
+        <h4>Vision</h4>
+        <p>EXCELLENCE AND SERVICE</p>
+        <h4>Mission</h4>
+        <p>CHRIST (Deemed to be University) is a nurturing ground for an individual’s holistic development to make effective contribution to the society in a dynamic environment.</p>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-buttons-grid">
+          <div class="footer-column">
+            <button>UBA</button>
+            <button>FCRA</button>
+            <button>Alumni</button>
+            <button>IQAC</button>
+            <button>Careers</button>
+          </div>
+          <div class="footer-column">
+            <button>Library</button>
+            <button>Centres</button>
+            <button>Research</button>
+            <button>Admission</button>
+            <button>Course Index</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright © CHRIST (Deemed to be University) 2025 |
+      <a href="#" style="color: #ccc;">Privacy Policy</a></p>
+    </div>
+  </footer>
+  <script>
+    function fetchData(section) {
+  const facultyId = 3; // For alpha.html, change accordingly for melbin.html, gnana.html
+  const container = document.getElementById("data-container");
+
+  fetch(`http://localhost:5000/faculty/${facultyId}/${section}`)
+    .then(response => response.json())
+    .then(data => {
+      const titleMap = {
+        qualifications: "Academic Qualifications",
+        experience: "Professional Experience",
+        research: "Research Interests",
+        publications: "Publications"
+      };
+
+      let html = `<h4>${titleMap[section]}</h4><ul>`;
+      data.forEach(item => {
+        if (section === 'qualifications') html += `<li>${item.qualification}</li>`;
+        if (section === 'experience') html += `<li>${item.detail}</li>`;
+        if (section === 'research') html += `<li>${item.interest}</li>`;
+        if (section === 'publications') html += `<li>${item.publication}</li>`;
+      });
+      html += "</ul>";
+
+      container.innerHTML = html;
+      container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    })
+    .catch(err => {
+      container.innerHTML = "<p style='color:red'>Error fetching data!</p>";
+      console.error(err);
+    });
+  }
+</script>
+</body>
+</html>
